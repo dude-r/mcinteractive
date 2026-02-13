@@ -1,3 +1,8 @@
+const INTERACTIVE_IMAGE = {
+  src: "assets/scene.png",
+  alt: "Office scene with clickable hotspots"
+};
+
 const HOTSPOTS = [
   {
     "x": 23.52,
@@ -180,6 +185,7 @@ const PANELS = [
   }
 ];
 
+const sceneImage = document.querySelector(".scene");
 const elHotspots = document.getElementById("hotspots");
 const modal = document.getElementById("modal");
 const modalTitle = document.getElementById("modalTitle");
@@ -189,6 +195,12 @@ const modalBullets = document.getElementById("modalBullets");
 const modalLink = document.getElementById("modalLink");
 
 let lastFocus = null;
+
+function applyInteractiveImage(){
+  if (!sceneImage) return;
+  sceneImage.src = INTERACTIVE_IMAGE.src;
+  sceneImage.alt = INTERACTIVE_IMAGE.alt;
+}
 
 function openModal(panel){
   lastFocus = document.activeElement;
@@ -243,6 +255,7 @@ function buildHotspots(){
   });
 }
 
+applyInteractiveImage();
 buildHotspots();
 
 modal.addEventListener("click", (e) => {
