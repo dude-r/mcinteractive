@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Motion Connected Interactive Benefits Graphic (Demo)</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar" aria-label="Header">
+    <div class="topbar__inner">
+      <div class="pill">INTERACTIVE GRAPHIC</div>
+      <h1>Click it. Read it. Learn it.</h1>
+      <p class="subhead">
+        Click the yellow dots to explore quick, plain-English benefits explanations.
+      </p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="stage" aria-label="Interactive graphic">
+      <div class="frame" role="group" aria-label="Office scene with hotspots">
+        <img class="scene" src="assets/scene.png" alt="Office scene with clickable hotspots" />
+        <div id="hotspots" class="hotspots" aria-hidden="false"></div>
+      </div>
+
+      <div class="hint">
+        Tip: on mobile, pinch-zoom if you want a closer look.
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal__backdrop" data-close="true"></div>
+
+    <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal__close" type="button" aria-label="Close" data-close="true">✕</button>
+
+      <h2 id="modalTitle" class="modal__title">Title</h2>
+
+      <div class="modal__section">
+        <div class="modal__label">Why it matters</div>
+        <p id="modalRisk" class="modal__text"></p>
+      </div>
+
+      <div class="modal__section">
+        <div class="modal__label">What to do</div>
+        <p id="modalSolution" class="modal__text"></p>
+        <ul id="modalBullets" class="modal__bullets"></ul>
+      </div>
+
+      <div class="modal__footer">
+        <div class="note">Note: plan documents and carrier rules govern specific terms and conditions.</div>
+        <a id="modalLink" class="link" href="#" target="_blank" rel="noreferrer noopener">Open related resource</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
