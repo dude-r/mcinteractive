@@ -29,6 +29,11 @@ Use the "Live Server" extension.
 3. Repo Settings -> Pages -> Deploy from branch -> select `main` / root.
 4. Your link will look like: https://YOURUSER.github.io/REPO
 
+## Edit the clickable image
+Open `script.js` and update `INTERACTIVE_IMAGE`:
+- `src`: path to your image file (example: `assets/scene.png`)
+- `alt`: accessibility text for the image
+
 ## Edit the content
 Open `script.js` and edit the `PANELS` array:
 - title
